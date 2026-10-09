@@ -9,6 +9,6 @@ namespace WebAppMVCUnique.Models
             optionsBuilder.UseSqlServer("Data Source=HDC3-L-94S8B54;Initial Catalog=db_webappMVCUnique;Integrated Security=true;TrustServerCertificate=true");
         }
 
-        public DbSet<UsersModel> Users { get; set; }
+        public DbSet<UsersModel> Users { get; set; }  //table
     }
 }

@@ -1,0 +1,37 @@
+﻿@model WebAppMVCUnique.Models.UsersModel
+@{
+    ViewData["Title"] = "DeleteUser";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-danger text-white">
+            <h4>Delete Users</h4>
+        </div>
+
+        <div class="card-body">
+            <h5>Are you sure you want to delete this product?</h5>
+
+            <dl class="row mt-3">
+                <dt class="col-sm-3">Name</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+            </dl>
+
+            <form method="post" asp-controller="Accounts" asp-action="DeleteUser">
+                <input type="hidden" name="UserID" value="@Model.UserID" />
+
+
+                <button type="submit" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+
+                <a asp-action="getUser" class="btn btn-secondary">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
