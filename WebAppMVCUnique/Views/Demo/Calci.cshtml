@@ -1,0 +1,59 @@
+﻿@model WebAppMVCUnique.Models.MyValues
+
+@{
+    ViewData["Title"] = "Addition";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center mb-0">
+                        Addition Calculator
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    <form asp-controller="Demo" asp-action="Calci" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                First Number
+                            </label>
+                            <input type="number"
+                                 
+                                   class="form-control"
+                                   placeholder="Enter first number"
+                                   required asp-for="x" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Second Number
+                            </label>
+                            <input type="number"
+                                  
+                                   class="form-control"
+                                   placeholder="Enter second number"
+                                   required asp-for="y" />
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success w-100">
+                            Add Numbers
+                        </button>
+                    </form>
+
+                    @if (ViewBag.Result != null)
+                    {
+                        <div class="alert alert-info mt-3">
+                            <strong>Result:</strong>
+                            @ViewBag.Result
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
