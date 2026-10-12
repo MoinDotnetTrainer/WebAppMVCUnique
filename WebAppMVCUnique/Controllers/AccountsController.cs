@@ -93,21 +93,29 @@ namespace WebAppMVCUnique.Controllers
         {
             //  var res = _db.Users.Any(x=>x.Email==data.Email && x.Password==data.Password);
 
+            
 
             if (data.Email == "xyz@yahoo.com" && data.Password == "123")
             {
+                HttpContext.Session.SetString("LoggedIn", "yes");
+                // is null
                 return RedirectToAction("Homepage");
             }
             return View();
         }
         public IActionResult Homepage()
         {
+            if (HttpContext.Session.GetString("LoggedIn") == null)
+            {
+                return RedirectToAction("Login");
+            }
             return View();
         }
 
 
         public IActionResult Logout()
         {
+            HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
     }

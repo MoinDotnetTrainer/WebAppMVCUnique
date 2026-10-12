@@ -27,6 +27,9 @@ namespace WebAppMVCUnique.Controllers
         [HttpGet] // on load
         public IActionResult Calci()
         {
+            ViewBag.myres = TempData["res2"];
+            ViewBag.sessionvalue = HttpContext.Session.GetString("key1");
+
             return View();  
         }
 

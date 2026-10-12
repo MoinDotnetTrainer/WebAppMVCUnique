@@ -1,0 +1,39 @@
+﻿@model WebAppMVCUnique.Controllers.Std
+@{
+    ViewData["Title"] = "Page1";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Page1</h1>
+
+<p>
+    Data from View bag is :@ViewBag.res
+</p>
+<p>
+    Data from View data is :@ViewData["res1"]
+</p>
+<p>
+    Data from tempdata is :@TempData["res2"]
+</p>
+
+<table>
+    @foreach (var item in ViewData["data1"] as List<WebAppMVCUnique.Controllers.Std>)
+        {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Email
+            </td>
+          
+        </tr>
+    }
+</table>
+
+<p>
+    Data from session : @ViewBag.sessionvalue
+</p>

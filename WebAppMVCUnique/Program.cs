@@ -9,6 +9,16 @@ namespace WebAppMVCUnique
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // configure a session middle ware
+            builder.Services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromMinutes(65);
+                option.Cookie.IsEssential = true;
+            });
+
+
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -23,12 +33,12 @@ namespace WebAppMVCUnique
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Accounts}/{action=Login}/{id?}");
 
             app.Run();
         }
