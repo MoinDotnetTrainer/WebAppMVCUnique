@@ -60,11 +60,11 @@ namespace WebAppMVCUnique.Controllers
         [HttpGet]
         public IActionResult DeleteUser(int UserID)
         {
-            var res = _db.Users.Find( UserID);
+            var res = _db.Users.Find(UserID);
             return View(res);
         }
 
-        [HttpPost,ActionName("DeleteUser")]
+        [HttpPost, ActionName("DeleteUser")]
         public IActionResult DeleteConfirm(int UserID)
         {
             var res = _db.Users.Find(UserID);
@@ -80,6 +80,35 @@ namespace WebAppMVCUnique.Controllers
 
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginModel data)
+        {
+            //  var res = _db.Users.Any(x=>x.Email==data.Email && x.Password==data.Password);
+
+
+            if (data.Email == "xyz@yahoo.com" && data.Password == "123")
+            {
+                return RedirectToAction("Homepage");
+            }
+            return View();
+        }
+        public IActionResult Homepage()
+        {
+            return View();
+        }
+
+
+        public IActionResult Logout()
+        {
+            return RedirectToAction("Login");
         }
     }
 }

@@ -10,5 +10,6 @@ namespace WebAppMVCUnique.Models
         }
 
         public DbSet<UsersModel> Users { get; set; }  //table
+        public DbSet<ValidateModel> validatemodel { get; set; }  //table
     }
 }

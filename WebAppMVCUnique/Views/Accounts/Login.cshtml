@@ -1,0 +1,55 @@
+﻿@model WebAppMVCUnique.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row w-100 justify-content-center">
+        <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+
+            <div class="card border-0 shadow-lg rounded-3">
+                <div class="card-body p-4 p-sm-5">
+
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold text-dark mb-1">Welcome Back</h3>
+                        <p class="text-muted small">Please sign in to your account</p>
+                    </div>
+
+                <form asp-asp-controller="Accounts" asp-action="Login"  method="post" >
+                        <!-- Email Field -->
+                        <div class="mb-3">
+                            @Html.LabelFor(m => m.Email, new { @class = "form-label fw-semibold text-secondary small" })
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg bg-light fs-6", placeholder = "name@example.com" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small mt-1 d-block" })
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                @Html.LabelFor(m => m.Password, new { @class = "form-label fw-semibold text-secondary small mb-0" })
+                                <a href="@Url.Action("ForgotPassword", "Account")" class="text-decoration-none small fw-medium">Forgot password?</a>
+                            </div>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg bg-light fs-6", placeholder = "••••••••" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger small mt-1 d-block" })
+                        </div>
+
+                      
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-lg w-100 fw-semibold shadow-sm mb-3">Sign In</button>
+
+                        <!-- Register Redirect -->
+                        <div class="text-center mt-3">
+                            <p class="text-muted small mb-0">Not a member? <a href="@Url.Action("Register", "Account")" class="text-decoration-none fw-medium">Register now</a></p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
