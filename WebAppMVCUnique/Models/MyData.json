@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1, //number
+    "name": "xyz", // string
+    "email": "xyz@Yahoo.com",
+    "age": 23,
+    "empid": null, // null
+    "Sal": 12334.55, // float
+    "status": false, // bool
+    "quali": [ "Btech", "Mtech" ], // array
+    "frndslist": { // object
+      "school": "xyz",
+      "college": "test"
+    }
+  },
+  {
+    "id": 2, //number
+    "name": "abc", // string
+    "email": "abc@Yahoo.com",
+    "age": 23,
+    "empid": null, // null
+    "Sal": 12334.55, // float
+    "status": false, // bool
+    "quali": [ "Btech", "Mtech" ], // array
+    "frndslist": { // object
+      "school": "xyz",
+      "college": "test"
+    }
+  }
+]
+
+//"" , value 

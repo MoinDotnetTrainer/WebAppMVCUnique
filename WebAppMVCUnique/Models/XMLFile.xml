@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<org>
+	<emp>
+		<id>1</id>
+		<name>xyz</name>
+		<email>xyz@yahoo.com</email>
+	</emp>
+	<emp>
+		<id>2</id>
+		<name>abc</name>
+		<email>abc@yahoo.com</email>
+	</emp>
+	<emp>
+		<id>1</id>
+		<name>xyz</name>
+		<email>xyz@yahoo.com</email>
+	</emp>
+</org>
